@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-Beauty Glow - Estética e Bem-estar</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #8B7355;
+            background-color: #FAF8F5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #F4E6D8 0%, #E8D5C4 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(139, 115, 85, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #D4A574;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: #E8A87C;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #8B7355;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-menu a:hover {
+            color: #E8A87C;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(244, 230, 216, 0.9), rgba(232, 213, 196, 0.9)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23F4E6D8" width="1200" height="600"/><circle cx="200" cy="150" r="80" fill="%23E8A87C" opacity="0.1"/><circle cx="1000" cy="400" r="120" fill="%23D4A574" opacity="0.1"/><rect x="0" y="500" width="1200" height="100" fill="%23E8D5C4"/></svg>');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #8B7355;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #A68B5B;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #E8A87C, #D4A574);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(232, 168, 124, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(232, 168, 124, 0.4);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #8B7355;
+            font-weight: 300;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #E8A87C, #D4A574);
+            margin: 20px auto;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #8B7355;
+        }
+
+        .about-image {
+            height: 400px;
+            background: linear-gradient(135deg, #F4E6D8, #E8D5C4);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #E8A87C;
+        }
+
+        /* Services Section */
+        .services {
+            background: linear-gradient(135deg, #FAF8F5, #F4E6D8);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 115, 85, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #E8A87C;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #8B7355;
+        }
+
+        .service-card p {
+            color: #A68B5B;
+            line-height: 1.6;
+        }
+
+        /* Packages Section */
+        .packages {
+            background: white;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .package-card {
+            background: linear-gradient(135deg, #F4E6D8, #E8D5C4);
+            padding: 2.5rem;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, #E8A87C, #D4A574);
+        }
+
+        .package-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #8B7355;
+        }
+
+        .package-list {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .package-list ul {
+            list-style: none;
+            color: #8B7355;
+        }
+
+        .package-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .package-list li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #F4E6D8, #E8D5C4);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 2rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #8B7355;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E8D5C4;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #E8A87C;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #8B7355;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 15px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #E8A87C;
+            width: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #E8A87C, #D4A574);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #8B7355;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsivity */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Add padding for fixed header */
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <span>B-Beauty Glow</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#pacotes">Pacotes</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>A beleza de brilhar por dentro e por fora</h1>
+                <p class="hero-subtitle">Estética, bem-estar e exclusividade no coração do Lago Sul</p>
+                <a href="#contato" class="cta-button">Agende sua visita</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Nós</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Na B-Beauty Glow, acreditamos que o verdadeiro bem-estar surge do equilíbrio entre corpo, mente e espírito. Nossa clínica é mais que um espaço de tratamentos estéticos - é um refúgio onde você pode se reconectar consigo mesmo e redescobrir sua beleza natural.</p>
+                    
+                    <p>Localizada no sofisticado Lago Sul, oferecemos um ambiente moderno, delicado e acolhedor, onde cada detalhe foi pensado para proporcionar uma experiência única e transformadora. Combinamos tecnologia de ponta com o cuidado humano genuíno, valorizando a individualidade de cada cliente.</p>
+                    
+                    <p>Nosso convite é simples: permita-se um momento de autocuidado e descubra como é brilhar com autenticidade e confiança.</p>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-leaf"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="services">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Massoterapia</h3>
+                    <p>Relaxante, terapêutica, esportiva, drenagem linfática e modeladora. Técnicas especializadas para seu bem-estar completo.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Dermatologia Estética</h3>
+                    <p>Limpeza de pele, peelings, esfoliação e consultoria dermocosmética personalizada para realçar sua beleza natural.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3>Estética Corporal</h3>
+                    <p>Tratamentos para celulite, estrias, gordura localizada, flacidez, banho de lua e muito mais para o corpo dos seus sonhos.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-foot-print"></i>
+                    </div>
+                    <h3>Podologia</h3>
+                    <p>Cuidados especializados para micose, mau cheiro, olho de peixe, feridas e relaxante spa dos pés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pacotes" class="packages">
+        <div class="container">
+            <h2 class="section-title">Pacotes Especiais</h2>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3>Pacote Debutante</h3>
+                    <div class="package-list">
+                        <h4>Pacote 1:</h4>
+                        <ul>
+                            <li>Limpeza de pele profunda</li>
+                            <li>Hidratação facial</li>
+                            <li>Design de sobrancelhas</li>
+                            <li>Manicure e pedicure</li>
+                        </ul>
+                        <h4>Pacote 2:</h4>
+                        <ul>
+                            <li>Todos os serviços do Pacote 1</li>
+                            <li>Massagem relaxante</li>
+                            <li>Tratamento capilar</li>
+                            <li>Drenagem linfática</li>
+                        </ul>
+                    </div>
+                    <a href="#contato" class="cta-button">Saiba mais</a>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Pacote Noiva</h3>
+                    <div class="package-list">
+                        <h4>Pacote 1:</h4>
+                        <ul>
+                            <li>Preparação facial completa</li>
+                            <li>Hidratação corporal</li>
+                            <li>Design de sobrancelhas</li>
+                            <li>Spa das mãos e pés</li>
+                        </ul>
+                        <h4>Pacote 2:</h4>
+                        <ul>
+                            <li>Todos os serviços do Pacote 1</li>
+                            <li>Massagem anti-stress</li>
+                            <li>Tratamento anti-idade</li>
+                            <li>Drenagem modeladora</li>
+                        </ul>
+                    </div>
+                    <a href="#contato" class="cta-button">Saiba mais</a>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Pacote Noivo</h3>
+                    <div class="package-list">
+                        <h4>Pacote 1:</h4>
+                        <ul>
+                            <li>Limpeza de pele masculina</li>
+                            <li>Hidratação facial</li>
+                            <li>Cuidados com barba</li>
+                            <li>Manicure masculina</li>
+                        </ul>
+                        <h4>Pacote 2:</h4>
+                        <ul>
+                            <li>Todos os serviços do Pacote 1</li>
+                            <li>Massagem desportiva</li>
+                            <li>Tratamento anti-idade</li>
+                            <li>Podologia especializada</li>
+                        </ul>
+                    </div>
+                    <a href="#contato" class="cta-button">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">Agendamento e Contato</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Agende sua visita</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="nome">Nome completo</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servico">Serviço desejado</label>
+                            <select id="servico" name="servico">
+                                <option value="">Selecione um serviço</option>
+                                <option value="massoterapia">Massoterapia</option>
+                                <option value="dermatologia">Dermatologia Estética</option>
+                                <option value="corporal">Estética Corporal</option>
+                                <option value="podologia">Podologia</option>
+                                <option value="pacote">Pacote Especial</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="data">Data preferida</label>
+                            <input type="date" id="data" name="data">
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%;">Enviar solicitação</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Entre em contato</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Telefone:</strong><br>
+                            (61) 3456-7801
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>E-mail:</strong><br>
+                            clinica@bbeautyglow.com.br
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Endereço:</strong><br>
+                            ST. De Habitações Individuais Sul<br>
+                            Lago Sul, DF
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://instagram.com/b_beautyglowclinica" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5561934567801" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 B-Beauty Glow. Todos os direitos reservados. | Cuidados e bem-estar exclusivo no Lago Sul</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission (placeholder)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pelo seu interesse! Entraremos em contato em breve para confirmar seu agendamento.');
+        });
+
+        // Add scroll effect to header
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const header = document.querySelector('header');
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
