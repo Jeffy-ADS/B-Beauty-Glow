@@ -673,10 +673,252 @@
             });
         });
 
-        // Form submission (placeholder)
+        // Implementação melhorada da função de contato
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Obrigado pelo seu interesse! Entraremos em contato em breve para confirmar seu agendamento.');
+            
+            // Capturar dados do formulário
+            const formData = {
+                nome: document.getElementById('nome').value.trim(),
+                telefone: document.getElementById('telefone').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                servico: document.getElementById('servico').value,
+                data: document.getElementById('data').value
+            };
+            
+            // Validação básica
+            if (!validateForm(formData)) {
+                return;
+            }
+            
+            // Feedback visual de carregamento
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Redirecionando...';
+            submitButton.disabled = true;
+            
+            // Aguardar um momento para feedback visual
+            setTimeout(() => {
+                // Redirecionar para WhatsApp
+                redirectToWhatsApp(formData);
+                
+                // Reset do formulário
+                this.reset();
+                
+                // Restaurar botão
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                
+                // Mostrar mensagem de confirmação
+                showSuccessMessage();
+                
+            }, 1000);
+        });
+        
+        // Função de validação
+        function validateForm(data) {
+            const errors = [];
+            
+            if (!data.nome) {
+                errors.push('Nome é obrigatório');
+                highlightError('nome');
+            }
+            
+            if (!data.telefone) {
+                errors.push('Telefone é obrigatório');
+                highlightError('telefone');
+            } else if (!isValidPhone(data.telefone)) {
+                errors.push('Telefone deve ter formato válido');
+                highlightError('telefone');
+            }
+            
+            if (!data.email) {
+                errors.push('E-mail é obrigatório');
+                highlightError('email');
+            } else if (!isValidEmail(data.email)) {
+                errors.push('E-mail deve ter formato válido');
+                highlightError('email');
+            }
+            
+            if (errors.length > 0) {
+                showErrorMessage(errors);
+                return false;
+            }
+            
+            // Limpar highlights de erro
+            clearErrorHighlights();
+            return true;
+        }
+        
+        // Validações auxiliares
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // Atualizar validação do telefone para o novo formato
+        function isValidPhone(phone) {
+            // Aceita formato (99)999999999 ou (99)99999999
+            const phoneRegex = /^\(\d{2}\)\d{8,9}$/;
+            return phoneRegex.test(phone);
+        }
+        
+        // Funções de feedback visual
+        function highlightError(fieldId) {
+            const field = document.getElementById(fieldId);
+            field.style.borderColor = '#ff6b6b';
+            field.style.boxShadow = '0 0 5px rgba(255, 107, 107, 0.5)';
+        }
+        
+        function clearErrorHighlights() {
+            const fields = ['nome', 'telefone', 'email'];
+            fields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                field.style.borderColor = '#E8D5C4';
+                field.style.boxShadow = 'none';
+            });
+        }
+        
+        function showErrorMessage(errors) {
+            const existingAlert = document.querySelector('.alert-error');
+            if (existingAlert) {
+                existingAlert.remove();
+            }
+            
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert-error';
+            alertDiv.style.cssText = `
+                background: #ff6b6b;
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                animation: slideIn 0.3s ease;
+            `;
+            alertDiv.innerHTML = `
+                <strong>Por favor, corrija os seguintes erros:</strong>
+                <ul style="margin: 10px 0 0 20px;">
+                    ${errors.map(error => `<li>${error}</li>`).join('')}
+                </ul>
+            `;
+            
+            const form = document.querySelector('.contact-form');
+            form.insertBefore(alertDiv, form.firstChild);
+            
+            // Remover alerta após 5 segundos
+            setTimeout(() => {
+                if (alertDiv.parentNode) {
+                    alertDiv.remove();
+                }
+            }, 5000);
+        }
+        
+        function showSuccessMessage() {
+            const existingAlert = document.querySelector('.alert-success');
+            if (existingAlert) {
+                existingAlert.remove();
+            }
+            
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert-success';
+            alertDiv.style.cssText = `
+                background: #51cf66;
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                animation: slideIn 0.3s ease;
+            `;
+            alertDiv.innerHTML = `
+                <strong>✅ Redirecionando para WhatsApp!</strong><br>
+                Continue a conversa para finalizar seu agendamento.
+            `;
+            
+            const form = document.querySelector('.contact-form');
+            form.insertBefore(alertDiv, form.firstChild);
+            
+            // Remover alerta após 5 segundos
+            setTimeout(() => {
+                if (alertDiv.parentNode) {
+                    alertDiv.remove();
+                }
+            }, 5000);
+        }
+        
+        // Integração com WhatsApp - Formatação bonita
+        function redirectToWhatsApp(data) {
+            const phone = '5561995525150'; // Número atualizado
+            
+            // Formatação bonita da data
+            let dataFormatada = 'Não especificada';
+            if (data.data) {
+                const dataObj = new Date(data.data + 'T00:00:00');
+                dataFormatada = dataObj.toLocaleDateString('pt-BR', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+            
+            // Formatação bonita do serviço
+            const servicosMap = {
+                'massoterapia': '💆‍♀️ Massoterapia',
+                'dermatologia': '✨ Dermatologia Estética',
+                'corporal': '🌟 Estética Corporal',
+                'podologia': '🦶 Podologia',
+                'pacote': '💎 Pacote Especial'
+            };
+            
+            const servicoFormatado = servicosMap[data.servico] || '🔹 Serviço não especificado';
+            
+            // Mensagem formatada bonitinha
+            const message = `🌸 *B-Beauty Glow* - Solicitação de Agendamento 🌸
+
+Olá! Gostaria de agendar uma visita para cuidar da minha beleza e bem-estar! ✨
+
+👤 *Nome:* ${data.nome}
+📞 *Telefone:* ${data.telefone}
+📧 *E-mail:* ${data.email}
+💅 *Serviço desejado:* ${servicoFormatado}
+📅 *Data preferida:* ${dataFormatada}
+
+💖 Estou ansiosa(o) para conhecer a clínica e desfrutar dos cuidados exclusivos no Lago Sul!
+
+_Enviado através do site B-Beauty Glow_`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+            
+            // Abrir WhatsApp
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // Máscara para telefone - formato (99)874561230
+        document.getElementById('telefone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            // Limitar a 11 dígitos
+            if (value.length > 11) {
+                value = value.slice(0, 11);
+            }
+            
+            // Aplicar formatação
+            if (value.length >= 11) {
+                // Celular com 11 dígitos: (99)99999-9999
+                value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1)$2$3');
+            } else if (value.length >= 10) {
+                // Fixo com 10 dígitos: (99)9999-9999
+                value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1)$2$3');
+            } else if (value.length >= 6) {
+                // Formatação parcial
+                value = value.replace(/(\d{2})(\d*)/, '($1)$2');
+            } else if (value.length >= 2) {
+                // Apenas DDD
+                value = value.replace(/(\d{2})/, '($1)');
+            }
+            
+            e.target.value = value;
         });
 
         // Add scroll effect to header
