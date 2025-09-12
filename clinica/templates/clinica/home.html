@@ -17,6 +17,7 @@
             line-height: 1.6;
             color: #8B7355;
             background-color: #FAF8F5;
+            padding-top: 80px;
         }
 
         .container {
@@ -510,9 +511,157 @@
             scroll-behavior: smooth;
         }
 
-        /* Add padding for fixed header */
-        body {
-            padding-top: 80px;
+        /* Chat Widget Styles */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            animation: pulse 2s infinite;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .chat-button i {
+            color: white;
+            font-size: 24px;
+        }
+
+        .chat-tooltip {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            border: 2px solid #E8D5C4;
+            min-width: 200px;
+        }
+
+        .chat-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid white;
+        }
+
+        .chat-tooltip.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+        }
+
+        .chat-tooltip h4 {
+            color: #8B7355;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .chat-tooltip p {
+            color: #A68B5B;
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .chat-notification {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background: #ff4757;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px);
+            }
+            60% {
+                transform: translateY(-2px);
+            }
+        }
+
+        /* Mobile responsiveness for chat widget */
+        @media (max-width: 768px) {
+            .chat-widget {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .chat-button {
+                width: 55px;
+                height: 55px;
+            }
+
+            .chat-button i {
+                font-size: 22px;
+            }
+
+            .chat-tooltip {
+                right: -10px;
+                bottom: 65px;
+                padding: 12px 15px;
+                min-width: 180px;
+            }
+
+            .chat-tooltip h4 {
+                font-size: 13px;
+            }
+
+            .chat-tooltip p {
+                font-size: 11px;
+            }
         }
     </style>
 </head>
@@ -757,6 +906,18 @@
             <p>&copy; 2025 B-Beauty Glow. Todos os direitos reservados. | Cuidados e bem-estar exclusivo no Lago Sul</p>
         </div>
     </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-tooltip" id="chatTooltip">
+            <h4>💬 Fale conosco!</h4>
+            <p>Tire suas dúvidas ou agende<br>seu horário pelo WhatsApp</p>
+        </div>
+        <button class="chat-button" onclick="openWhatsAppChat()">
+            <i class="fab fa-whatsapp"></i>
+            <span class="chat-notification">1</span>
+        </button>
+    </div>
 
     <script>
         // Smooth scrolling for navigation links
@@ -1034,6 +1195,71 @@ _Enviado através do site B-Beauty Glow_`;
             }
             
             lastScroll = currentScroll;
+        });
+
+        // WhatsApp Chat Function
+        function openWhatsAppChat() {
+            const phone = '5561995525150';
+            const message = `🌸 *Olá B-Beauty Glow!* 🌸
+
+Vim através do site e gostaria de conversar com um atendente! 💬
+
+Tenho interesse em:
+□ Agendar um serviço
+□ Conhecer os tratamentos
+□ Saber sobre promoções
+□ Comprar um Gift Card
+□ Outras dúvidas
+
+Estou aguardando o contato! ✨
+
+_Mensagem enviada através do site B-Beauty Glow_`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+            
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+            
+            // Remove notification after click
+            const notification = document.querySelector('.chat-notification');
+            if (notification) {
+                notification.style.display = 'none';
+            }
+
+            // Hide tooltip after click
+            const tooltip = document.getElementById('chatTooltip');
+            tooltip.classList.add('hidden');
+        }
+
+        // Show tooltip automatically on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const tooltip = document.getElementById('chatTooltip');
+            
+            // Show tooltip after 3 seconds
+            setTimeout(() => {
+                tooltip.classList.remove('hidden');
+                
+                // Hide tooltip after 8 seconds if user hasn't interacted
+                setTimeout(() => {
+                    if (!tooltip.classList.contains('hidden')) {
+                        tooltip.classList.add('hidden');
+                    }
+                }, 8000);
+            }, 3000);
+        });
+
+        // Show tooltip on hover
+        document.querySelector('.chat-widget').addEventListener('mouseenter', function() {
+            const tooltip = document.getElementById('chatTooltip');
+            tooltip.classList.remove('hidden');
+        });
+
+        // Hide tooltip when mouse leaves (optional)
+        document.querySelector('.chat-widget').addEventListener('mouseleave', function() {
+            // Opcional: manter tooltip visível mesmo quando sair com mouse
+            // const tooltip = document.getElementById('chatTooltip');
+            // tooltip.classList.add('hidden');
         });
     </script>
 </body>
