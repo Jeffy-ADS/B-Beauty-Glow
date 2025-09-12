@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Pedido - B-Beauty Glow</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=BRL&locale=pt_BR"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #8B7355;
+            background: linear-gradient(135deg, #FAF8F5, #F4E6D8);
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #D4A574;
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: #E8A87C;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            color: #8B7355;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            color: #A68B5B;
+            font-style: italic;
+        }
+
+        /* Gift Card Display */
+        .gift-card-display {
+            background: linear-gradient(135deg, #E8A87C, #D4A574);
+            border-radius: 25px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(232, 168, 124, 0.3);
+            color: white;
+            text-align: center;
+        }
+
+        .gift-card-display::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+        }
+
+        .gift-card-display::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px dashed rgba(255,255,255,0.3);
+            border-radius: 20px;
+        }
+
+        .gift-card-header {
+            position: relative;
+            z-index: 2;
+        }
+
+        .gift-card-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .gift-card-amount {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 1.5rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .gift-card-details {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .gift-card-message {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            font-style: italic;
+            margin: 1rem 0;
+        }
+
+        .gift-card-code {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            font-family: monospace;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* Payment Section */
+        .payment-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(139, 115, 85, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .payment-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #8B7355;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .payment-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #E8A87C, #D4A574);
+            margin: 15px auto;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .payment-option {
+            border: 2px solid #E8D5C4;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .payment-option:hover {
+            border-color: #E8A87C;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(232, 168, 124, 0.2);
+        }
+
+        .payment-option.active {
+            border-color: #E8A87C;
+            background: linear-gradient(135deg, #F4E6D8, #E8D5C4);
+        }
+
+        .payment-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #E8A87C;
+        }
+
+        .payment-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #8B7355;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-description {
+            color: #A68B5B;
+            font-size: 0.9rem;
+        }
+
+        /* Payment Buttons */
+        .payment-buttons {
+            margin-top: 2rem;
+        }
+
+        .payment-button {
+            width: 100%;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .paypal-button {
+            background: linear-gradient(135deg, #0070ba, #005ea6);
+            color: white;
+        }
+
+        .paypal-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 112, 186, 0.4);
+        }
+
+        .whatsapp-button {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .payment-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.9);
+            color: #8B7355;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #8B7355;
+        }
+
+        .loading i {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Success/Error Messages */
+        .message {
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .success {
+            background: linear-gradient(135deg, #51cf66, #40c057);
+            color: white;
+        }
+
+        .error {
+            background: linear-gradient(135deg, #ff6b6b, #fa5252);
+            color: white;
+        }
+
+        /* Security Badge */
+        .security-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .payment-options {
+                grid-template-columns: 1fr;
+            }
+
+            .gift-card-display {
+                padding: 2rem;
+            }
+
+            .gift-card-amount {
+                font-size: 3rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .back-button {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 2rem;
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'presente' %}" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Voltar
+        </a>
+
+        <div class="header">
+            <a href="{% url 'home' %}" class="logo">
+                <i class="fas fa-spa"></i>
+                <span>B-Beauty Glow</span>
+            </a>
+            <h1 class="page-title">Seu Pedido</h1>
+            <p class="page-subtitle">Revise os detalhes e escolha sua forma de pagamento</p>
+        </div>
+
+        <!-- Gift Card Display -->
+        <div class="gift-card-display" id="giftCardDisplay">
+            <div class="gift-card-header">
+                <h2 class="gift-card-title">🎁 GIFT CARD B-BEAUTY GLOW</h2>
+                <div class="gift-card-amount" id="displayAmount">R$ 0</div>
+                
+                <div class="gift-card-details">
+                    <div class="detail-row">
+                        <span>Presenteado:</span>
+                        <span id="displayRecipient">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>De:</span>
+                        <span id="displaySender">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Entrega:</span>
+                        <span id="displayDelivery">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Taxa de entrega:</span>
+                        <span id="displayDeliveryFee">Grátis</span>
+                    </div>
+                    <div class="detail-row">
+                        <span><strong>Total:</strong></span>
+                        <span id="displayTotal"><strong>R$ 0</strong></span>
+                    </div>
+                </div>
+
+                <div class="gift-card-message" id="displayMessage">
+                    Mensagem especial aparecerá aqui
+                </div>
+
+                <div class="gift-card-code" id="displayCode">
+                    BGLOW2025XXX
+                </div>
+                
+                <p style="opacity: 0.8; margin-top: 1rem;">Válido por 12 meses a partir da compra</p>
+            </div>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="payment-section">
+            <h2 class="payment-title">Escolha sua forma de pagamento</h2>
+            
+            <div class="payment-options">
+                <div class="payment-option" id="paypalOption" onclick="selectPaymentMethod('paypal')">
+                    <div class="payment-icon">
+                        <i class="fab fa-paypal"></i>
+                    </div>
+                    <div class="payment-name">PayPal</div>
+                    <div class="payment-description">Pagamento seguro com cartão, débito ou saldo PayPal</div>
+                </div>
+
+                <div class="payment-option" id="whatsappOption" onclick="selectPaymentMethod('whatsapp')">
+                    <div class="payment-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="payment-name">WhatsApp + PIX</div>
+                    <div class="payment-description">Finalize via WhatsApp e pague com PIX</div>
+                </div>
+            </div>
+
+            <div class="payment-buttons">
+                <!-- PayPal Button -->
+                <div id="paypal-button-container" style="display: none;"></div>
+                
+                <!-- WhatsApp Button -->
+                <button class="payment-button whatsapp-button" id="whatsappButton" style="display: none;" onclick="payWithWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    Finalizar no WhatsApp
+                </button>
+            </div>
+
+            <div class="security-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>Transação 100% segura e protegida</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let orderData = {};
+        let selectedPaymentMethod = '';
+
+        // Load order data from localStorage
+        function loadOrderData() {
+            const storedData = localStorage.getItem('giftCardOrder');
+            if (!storedData) {
+                // Redirect back if no order data
+                window.location.href = '{% url "presente" %}';
+                return;
+            }
+
+            orderData = JSON.parse(storedData);
+            displayOrderData();
+        }
+
+        // Display order data in the gift card
+        function displayOrderData() {
+            const deliveryMethods = {
+                'email': 'Por e-mail',
+                'whatsapp': 'Via WhatsApp',
+                'print': 'Para imprimir',
+                'physical': 'Cartão físico'
+            };
+
+            const amount = parseFloat(orderData.giftAmount) || 0;
+            const deliveryFee = orderData.deliveryMethod === 'physical' ? 15 : 0;
+            const total = amount + deliveryFee;
+
+            document.getElementById('displayAmount').textContent = `R$ ${amount.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+            document.getElementById('displayRecipient').textContent = orderData.recipientName || '-';
+            document.getElementById('displaySender').textContent = orderData.senderName || '-';
+            document.getElementById('displayDelivery').textContent = deliveryMethods[orderData.deliveryMethod] || '-';
+            document.getElementById('displayDeliveryFee').textContent = deliveryFee > 0 ? `R$ ${deliveryFee}` : 'Grátis';
+            document.getElementById('displayTotal').innerHTML = `<strong>R$ ${total.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</strong>`;
+            document.getElementById('displayMessage').textContent = orderData.giftMessage || 'Desejando momentos especiais de bem-estar e autocuidado!';
+            document.getElementById('displayCode').textContent = orderData.giftCardCode || 'BGLOW2025XXX';
+
+            // Store total for payment processing
+            orderData.total = total;
+        }
+
+        // Select payment method
+        function selectPaymentMethod(method) {
+            selectedPaymentMethod = method;
+            
+            // Update UI
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            
+            document.getElementById(method + 'Option').classList.add('active');
+            
+            // Show/hide payment buttons
+            if (method === 'paypal') {
+                document.getElementById('paypal-button-container').style.display = 'block';
+                document.getElementById('whatsappButton').style.display = 'none';
+                renderPayPalButton();
+            } else {
+                document.getElementById('paypal-button-container').style.display = 'none';
+                document.getElementById('whatsappButton').style.display = 'block';
+            }
+        }
+
+        // Render PayPal Button
+        function renderPayPalButton() {
+            const container = document.getElementById('paypal-button-container');
+            container.innerHTML = '';
+
+            paypal.Buttons({
+                style: {
+                    color: 'gold',
+                    shape: 'rect',
+                    label: 'paypal',
+                    layout: 'vertical',
+                    height: 50
+                },
+
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: orderData.total.toFixed(2),
+                                currency_code: 'BRL'
+                            },
+                            description: `B-Beauty Glow Gift Card - ${orderData.recipientName}`,
+                            custom_id: orderData.orderId,
+                            soft_descriptor: 'B-Beauty Glow'
+                        }]
+                    });
+                },
+
+                onApprove: function(data, actions) {
+                    showLoading();
+                    return actions.order.capture().then(function(details) {
+                        handlePaymentSuccess(details, 'paypal');
+                    });
+                },
+
+                onError: function(err) {
+                    console.error('PayPal Error:', err);
+                    showMessage('Erro no pagamento PayPal. Tente novamente.', 'error');
+                },
+
+                onCancel: function(data) {
+                    showMessage('Pagamento PayPal cancelado.', 'error');
+                }
+            }).render('#paypal-button-container');
+        }
+
+        // Pay with WhatsApp
+        function payWithWhatsApp() {
+            const phone = '5561995525150';
+            const deliveryMethods = {
+                'email': 'Por e-mail',
+                'whatsapp': 'Via WhatsApp',
+                'print': 'Para imprimir',
+                'physical': 'Cartão físico'
+            };
+
+            const message = `🎁 *B-Beauty Glow* - Finalização de Gift Card 🎁
+
+*📋 DETALHES DO PEDIDO:*
+• *ID:* ${orderData.orderId}
+• *Código Gift Card:* ${orderData.giftCardCode}
+
+*💎 GIFT CARD:*
+• *Para:* ${orderData.recipientName}
+• *De:* ${orderData.senderName}
+• *Valor:* R$ ${parseFloat(orderData.giftAmount).toLocaleString('pt-BR', {minimumFractionDigits: 2})}
+• *Taxa entrega:* ${orderData.deliveryMethod === 'physical' ? 'R$ 15,00' : 'Grátis'}
+• *TOTAL:* R$ ${orderData.total.toLocaleString('pt-BR', {minimumFractionDigits: 2})}
+
+*📝 MENSAGEM:*
+"${orderData.giftMessage || 'Desejando momentos especiais de bem-estar!'}"
+
+*📦 ENTREGA:*
+• *Método:* ${deliveryMethods[orderData.deliveryMethod]}
+• *Contato:* ${orderData.contactInfo}
+
+*💳 PAGAMENTO VIA PIX:*
+Olá! Gostaria de finalizar esta compra de Gift Card. Por favor, envie os dados da chave PIX para pagamento.
+
+Após o pagamento, enviarei o comprovante para processamento.
+
+_Pedido gerado através do site B-Beauty Glow_`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+            
+            showMessage(`
+                ✅ <strong>Redirecionado para WhatsApp!</strong><br><br>
+                Complete o pagamento via PIX através do WhatsApp.<br>
+                <strong>ID do Pedido:</strong> ${orderData.orderId}<br>
+                <strong>Código Gift Card:</strong> ${orderData.giftCardCode}
+            `, 'success');
+        }
+
+        // Handle payment success
+        function handlePaymentSuccess(details, method) {
+            showMessage(`
+                🎉 <strong>Pagamento Realizado com Sucesso!</strong><br><br>
+                <strong>Método:</strong> ${method === 'paypal' ? 'PayPal' : 'WhatsApp + PIX'}<br>
+                ${details ? `<strong>ID Transação:</strong> ${details.id}<br>` : ''}
+                <strong>Gift Card:</strong> ${orderData.giftCardCode}<br><br>
+                Você receberá o gift card em breve no método de entrega escolhido.<br><br>
+                <strong>Obrigado por escolher a B-Beauty Glow!</strong>
+            `, 'success');
+
+            // Clear localStorage
+            localStorage.removeItem('giftCardOrder');
+
+            // Redirect to home after 5 seconds
+            setTimeout(() => {
+                window.location.href = '{% url "home" %}';
+            }, 5000);
+        }
+
+        // Show loading state
+        function showLoading() {
+            const container = document.querySelector('.payment-section');
+            container.innerHTML = `
+                <div class="loading">
+                    <i class="fas fa-spinner fa-2x"></i>
+                    <p style="margin-top: 1rem;">Processando pagamento...</p>
+                </div>
+            `;
+        }
+
+        // Show message
+        function showMessage(message, type) {
+            const existingMessage = document.querySelector('.message');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            messageDiv.innerHTML = message;
+
+            const container = document.querySelector('.container');
+            container.insertBefore(messageDiv, container.firstChild);
+
+            messageDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrderData();
+        });
+    </script>
+</body>
+</html>

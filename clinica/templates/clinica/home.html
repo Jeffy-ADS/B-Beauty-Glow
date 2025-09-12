@@ -49,6 +49,31 @@
             font-size: 1.8rem;
             font-weight: bold;
             color: #D4A574;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #E8A87C;
+            transform: scale(1.05);
+            text-decoration: none !important;
+        }
+
+        .logo:focus {
+            outline: none;
+            text-decoration: none !important;
+        }
+
+        .logo:visited {
+            text-decoration: none !important;
+        }
+
+        .logo:active {
+            text-decoration: none !important;
+        }
+
+        .logo:link {
+            text-decoration: none !important;
         }
 
         .logo i {
@@ -72,6 +97,75 @@
 
         .nav-menu a:hover {
             color: #E8A87C;
+        }
+
+        /* Gift Button */
+        .gift-button {
+            background: linear-gradient(135deg, #E8A87C, #D4A574) !important;
+            color: white !important;
+            padding: 8px 20px !important;
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+            box-shadow: 0 3px 15px rgba(232, 168, 124, 0.3) !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+            overflow: hidden !important;
+            text-decoration: none !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
+
+        .gift-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .gift-button:hover::before {
+            left: 100%;
+        }
+
+        .gift-button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 5px 20px rgba(232, 168, 124, 0.4) !important;
+            color: white !important;
+        }
+
+        .gift-button i {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-3px);
+            }
+            60% {
+                transform: translateY(-1px);
+            }
+        }
+
+        /* Responsive gift button */
+        @media (max-width: 768px) {
+            .gift-button span {
+                display: none;
+            }
+            
+            .gift-button {
+                width: 40px !important;
+                height: 40px !important;
+                border-radius: 50% !important;
+                justify-content: center !important;
+                padding: 0 !important;
+            }
         }
 
         /* Hero Section */
@@ -425,16 +519,22 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">
+            <a href="{% url 'home' %}" class="logo">
                 <i class="fas fa-spa"></i>
                 <span>B-Beauty Glow</span>
-            </div>
+            </a>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#pacotes">Pacotes</a></li>
                 <li><a href="#contato">Contato</a></li>
+                <li>
+                    <a href="{% url 'presente' %}" class="gift-button">
+                        <i class="fas fa-gift"></i>
+                        <span>Compre um Presente</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>

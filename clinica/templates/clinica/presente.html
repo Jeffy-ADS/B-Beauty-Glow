@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-Beauty Glow - Gift Cards & Vouchers</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #8B7355;
+            background-color: #FAF8F5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #F4E6D8 0%, #E8D5C4 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(139, 115, 85, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #D4A574;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #E8A87C;
+            transform: scale(1.05);
+            text-decoration: none;
+        }
+
+        .logo:focus {
+            outline: none;
+            text-decoration: none;
+        }
+
+        .logo:visited {
+            text-decoration: none;
+        }
+
+        .logo:active {
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: #E8A87C;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #8B7355;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #E8A87C;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(244, 230, 216, 0.95), rgba(232, 213, 196, 0.95)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23F4E6D8" width="1200" height="400"/><circle cx="150" cy="100" r="60" fill="%23E8A87C" opacity="0.15"/><circle cx="1050" cy="300" r="80" fill="%23D4A574" opacity="0.15"/><path d="M0 350 Q300 280 600 320 T1200 300 V400 H0 Z" fill="%23E8D5C4"/></svg>');
+            padding: 80px 0 60px;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #8B7355;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #A68B5B;
+            font-style: italic;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Gift Cards Section */
+        .gift-cards {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .gift-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gift-card {
+            background: linear-gradient(135deg, #F4E6D8 0%, #E8D5C4 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .gift-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(139, 115, 85, 0.15);
+        }
+
+        .gift-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #E8A87C, #D4A574);
+        }
+
+        .gift-card-icon {
+            font-size: 3rem;
+            color: #E8A87C;
+            margin-bottom: 1rem;
+        }
+
+        .gift-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #8B7355;
+        }
+
+        .gift-card-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #D4A574;
+            margin-bottom: 1rem;
+        }
+
+        .gift-card p {
+            color: #8B7355;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .gift-card-button {
+            background: linear-gradient(135deg, #E8A87C, #D4A574);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .gift-card-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(232, 168, 124, 0.4);
+        }
+
+        /* Custom Gift Card Section */
+        .custom-gift {
+            background: linear-gradient(135deg, #FAF8F5, #F4E6D8);
+            padding: 60px 0;
+        }
+
+        .custom-gift-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .custom-gift-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(139, 115, 85, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #8B7355;
+            font-weight: 300;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #E8A87C, #D4A574);
+            margin: 20px auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #8B7355;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E8D5C4;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #E8A87C;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .gift-preview {
+            background: linear-gradient(135deg, #E8A87C, #D4A574);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(232, 168, 124, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gift-preview::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+        }
+
+        .gift-preview h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .gift-preview-amount {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .gift-preview-message {
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .gift-preview-code {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* How it Works Section */
+        .how-it-works {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #E8A87C, #D4A574);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step h3 {
+            color: #8B7355;
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            color: #A68B5B;
+        }
+
+        /* Footer */
+        footer {
+            background: #8B7355;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Responsivity */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .custom-gift-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .gift-cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gift-card {
+            animation: fadeInUp 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="{% url 'home' %}" class="logo">
+                <i class="fas fa-spa"></i>
+                <span>B-Beauty Glow</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="#gift-cards">Gift Cards</a></li>
+                <li><a href="#personalizado">Personalizado</a></li>
+                <li><a href="#como-funciona">Como Funciona</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>🎁 Presente o Bem-Estar</h1>
+            <p class="hero-subtitle">Oferecemos gift cards e vouchers personalizados para momentos únicos de autocuidado e beleza</p>
+        </div>
+    </section>
+
+    <section id="gift-cards" class="gift-cards">
+        <div class="container">
+            <h2 class="section-title">Gift Cards Disponíveis</h2>
+            <div class="gift-cards-grid">
+                <div class="gift-card">
+                    <div class="gift-card-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Momento Zen</h3>
+                    <div class="gift-card-price">R$ 150</div>
+                    <p>Massagem relaxante + limpeza de pele básica. Perfeito para quem precisa de um momento de paz.</p>
+                    <button class="gift-card-button" onclick="selectGiftCard('Momento Zen', 150)">Comprar</button>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-card-icon">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                    <h3>Glow Completo</h3>
+                    <div class="gift-card-price">R$ 280</div>
+                    <p>Limpeza de pele profunda + massagem modeladora + design de sobrancelhas.</p>
+                    <button class="gift-card-button" onclick="selectGiftCard('Glow Completo', 280)">Comprar</button>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-card-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Day Spa Premium</h3>
+                    <div class="gift-card-price">R$ 450</div>
+                    <p>Experiência completa: 3 horas de tratamentos à escolha + relaxamento no ambiente.</p>
+                    <button class="gift-card-button" onclick="selectGiftCard('Day Spa Premium', 450)">Comprar</button>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Casal Especial</h3>
+                    <div class="gift-card-price">R$ 520</div>
+                    <p>Experiência para duas pessoas: massagem relaxante + tratamentos faciais simultâneos.</p>
+                    <button class="gift-card-button" onclick="selectGiftCard('Casal Especial', 520)">Comprar</button>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-card-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Valor Personalizado</h3>
+                    <div class="gift-card-price">R$ ?</div>
+                    <p>Escolha o valor que desejar e permita que a pessoa presenteada monte sua experiência ideal.</p>
+                    <button class="gift-card-button" onclick="customAmount()">Personalizar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="personalizado" class="custom-gift">
+        <div class="container">
+            <h2 class="section-title">Personalize seu Gift Card</h2>
+            <div class="custom-gift-content">
+                <form class="custom-gift-form" id="giftForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="recipientName">Nome do presenteado</label>
+                            <input type="text" id="recipientName" name="recipientName" placeholder="Ex: Maria Silva">
+                        </div>
+                        <div class="form-group">
+                            <label for="giftAmount">Valor do presente</label>
+                            <input type="number" id="giftAmount" name="giftAmount" placeholder="R$ 0,00" min="50">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="giftMessage">Mensagem personalizada</label>
+                        <textarea id="giftMessage" name="giftMessage" rows="3" placeholder="Escreva uma mensagem carinhosa..."></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="senderName">Seu nome</label>
+                            <input type="text" id="senderName" name="senderName" placeholder="Quem está presenteando">
+                        </div>
+                        <div class="form-group">
+                            <label for="deliveryMethod">Forma de entrega</label>
+                            <select id="deliveryMethod" name="deliveryMethod">
+                                <option value="">Selecione</option>
+                                <option value="email">Por e-mail</option>
+                                <option value="whatsapp">Via WhatsApp</option>
+                                <option value="print">Para imprimir</option>
+                                <option value="physical">Cartão físico</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactInfo">E-mail ou telefone para entrega</label>
+                        <input type="text" id="contactInfo" name="contactInfo" placeholder="contato@email.com ou (61) 99999-9999">
+                    </div>
+                    
+                    <button type="submit" class="gift-card-button" style="width: 100%; padding: 15px;">
+                        <i class="fas fa-shopping-cart"></i> Finalizar Compra
+                    </button>
+                </form>
+
+                <div class="gift-preview">
+                    <h3>🎁 GIFT CARD</h3>
+                    <div class="gift-preview-amount" id="previewAmount">R$ 0</div>
+                    <p><strong>Para:</strong> <span id="previewRecipient">Nome do presenteado</span></p>
+                    <div class="gift-preview-message" id="previewMessage">Sua mensagem personalizada aparecerá aqui</div>
+                    <p><strong>De:</strong> <span id="previewSender">Seu nome</span></p>
+                    <div class="gift-preview-code">BGLOW2025XXX</div>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">Válido por 12 meses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Como Funciona</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Escolha o Gift Card</h3>
+                    <p>Selecione um de nossos pacotes ou personalize com o valor desejado</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Personalize</h3>
+                    <p>Adicione uma mensagem especial e escolha como entregar o presente</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Efetue o Pagamento</h3>
+                    <p>Pague via PIX, cartão ou transferência de forma segura</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Receba e Presenteie</h3>
+                    <p>Receba o gift card na forma escolhida e presenteie quem você ama</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 B-Beauty Glow. Gift Cards válidos por 12 meses. | Carinho em forma de bem-estar</p>
+        </div>
+    </footer>
+
+    <script>
+        // Update preview in real-time
+        document.getElementById('recipientName').addEventListener('input', function() {
+            document.getElementById('previewRecipient').textContent = this.value || 'Nome do presenteado';
+        });
+
+        document.getElementById('giftAmount').addEventListener('input', function() {
+            const amount = parseFloat(this.value) || 0;
+            document.getElementById('previewAmount').textContent = `R$ ${amount.toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`;
+        });
+
+        document.getElementById('giftMessage').addEventListener('input', function() {
+            document.getElementById('previewMessage').textContent = this.value || 'Sua mensagem personalizada aparecerá aqui';
+        });
+
+        document.getElementById('senderName').addEventListener('input', function() {
+            document.getElementById('previewSender').textContent = this.value || 'Seu nome';
+        });
+
+        // Select pre-defined gift card
+        function selectGiftCard(name, amount) {
+            document.getElementById('giftAmount').value = amount;
+            document.getElementById('previewAmount').textContent = `R$ ${amount}`;
+            document.getElementById('recipientName').focus();
+            
+            // Scroll to form
+            document.getElementById('personalizado').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Custom amount selection
+        function customAmount() {
+            document.getElementById('giftAmount').focus();
+            document.getElementById('personalizado').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Form submission
+        document.getElementById('giftForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            if (!data.recipientName || !data.giftAmount || !data.senderName) {
+                alert('Por favor, preencha pelo menos o nome do presenteado, valor e seu nome.');
+                return;
+            }
+            
+            // Store order data in localStorage
+            const orderData = {
+                ...data,
+                orderId: 'BGLOW' + Date.now().toString().slice(-6),
+                giftCardCode: 'BGLOW' + Date.now().toString().slice(-6) + Math.random().toString(36).substr(2, 4).toUpperCase(),
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('giftCardOrder', JSON.stringify(orderData));
+            
+            // Redirect to order page
+            window.location.href = '{% url "seupedido" %}';
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Format currency input
+        document.getElementById('giftAmount').addEventListener('input', function() {
+            if (this.value < 0) this.value = 0;
+        });
+    </script>
+</body>
+</html>
