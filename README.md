@@ -12,7 +12,10 @@
 <div align="center">
 
 ### 🎯 **Acesse o Demo Live**
-[🌐 **Ver Site ao Vivo**](http://127.0.0.1:8000/) | [📱 **Versão Mobile**](http://127.0.0.1:8000/) | [🎁 **Gift Cards**](http://127.0.0.1:8000/presente/)
+[🌐 **Ver Site ao Vivo**](https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/) | [🎁 **Gift Cards**](https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/presente.html)
+<a href="https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/" class="contact-link" target="_blank">Site B-Beauty Glow </a>
+<a href="https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/presente.html" class="contact-link" target="_blank">Site B-Beauty Glow </a>
+
 
 </div>
 
