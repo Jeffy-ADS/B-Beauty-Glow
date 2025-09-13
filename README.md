@@ -1,4 +1,4 @@
-# B-Beauty Glow
+# 🌸 B-Beauty Glow
 
 > **Uma clínica de estética e bem-estar moderna e elegante localizada no Lago Sul, Brasília - DF**
 
@@ -12,7 +12,8 @@
 <div align="center">
 
 ### 🎯 **Acesse o Demo Live**
-[🌐 **Ver Site ao Vivo**]([http://127.0.0.1:8000/](https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/)) 
+[🌐 **Ver Site ao Vivo**](http://127.0.0.1:8000/) | [📱 **Versão Mobile**](http://127.0.0.1:8000/) | [🎁 **Gift Cards**](http://127.0.0.1:8000/presente/)
+
 </div>
 
 ---
@@ -22,17 +23,17 @@
 <div align="center">
 
 ### 🏠 **Página Principal**
-<img src="https://raw.githubusercontent.com/Jeffy-ADS/B-Beauty-Glow/main/img/index.png" alt="Homepage B-Beauty Glow" width="800"/>
+<img src="https://i.pinimg.com/736x/2c/70/f5/2c70f566ee2fc1c1dff94a94bdc9a494.jpg" alt="Homepage B-Beauty Glow" width="800"/>
 
 *Interface principal com design elegante, carrossel interativo e formulário de agendamento integrado*
 
 ### 🎁 **Sistema de Gift Cards**
-<img src="https://raw.githubusercontent.com/Jeffy-ADS/B-Beauty-Glow/main/img/presente.png" alt="Gift Cards" width="800"/>
+<img src="https://i.pinimg.com/736x/ba/ed/0b/baed0bc9eb18a2cf234d52d595f2e7da.jpg" alt="Gift Cards" width="800"/>
 
 *Página dedicada para compra de cartões presente com interface moderna e intuitiva*
 
 ### 💳 **Processo de Compra**
-<img src="https://raw.githubusercontent.com/Jeffy-ADS/B-Beauty-Glow/main/img/gift_card.png" alt="Processo Gift Card" width="800"/>
+<img src="https://i.pinimg.com/736x/b4/e5/4b/b4e54b9fdab73ebba45d4b7a7c59fece.jpg" alt="Processo Gift Card" width="800"/>
 
 *Fluxo completo de compra com formulário validado e integração WhatsApp*
 
@@ -46,9 +47,9 @@
 
 | 🎯 Funcionalidade | 📸 Preview | ✨ Características |
 |---|---|---|
-| **🏠 Landing Page** | <img src="https://raw.githubusercontent.com/Jeffy-ADS/B-Beauty-Glow/main/img/index.png" width="300"/> | Design responsivo, carrossel interativo, mapa integrado |
-| **🎁 Gift Cards** | <img src="https://raw.githubusercontent.com/Jeffy-ADS/B-Beauty-Glow/main/img/presente.png" width="300"/> | Sistema de compra, múltiplas opções, design elegante |
-| **💳 Checkout** | <img src="https://raw.githubusercontent.com/Jeffy-ADS/B-Beauty-Glow/main/img/gift_card.png" width="300"/> | Validação em tempo real, integração WhatsApp |
+| **🏠 Landing Page** | <img src="https://i.pinimg.com/736x/2c/70/f5/2c70f566ee2fc1c1dff94a94bdc9a494.jpg" width="300"/> | Design responsivo, carrossel interativo, mapa integrado |
+| **🎁 Gift Cards** | <img src="https://i.pinimg.com/736x/ba/ed/0b/baed0bc9eb18a2cf234d52d595f2e7da.jpg" width="300"/> | Sistema de compra, múltiplas opções, design elegante |
+| **💳 Checkout** | <img src="https://i.pinimg.com/736x/b4/e5/4b/b4e54b9fdab73ebba45d4b7a7c59fece.jpg" width="300"/> | Validação em tempo real, integração WhatsApp |
 
 </div>
 
@@ -64,7 +65,7 @@ Transformar vidas através da beleza e bem-estar, proporcionando uma experiênci
 ## 🚀 Funcionalidades Principais
 
 ### 🏠 **Landing Page**
-<img src="https://raw.githubusercontent.com/Jeffy-ADS/B-Beauty-Glow/main/img/index.png" alt="Homepage" width="600"/>
+<img src="https://i.pinimg.com/736x/2c/70/f5/2c70f566ee2fc1c1dff94a94bdc9a494.jpg" alt="Homepage" width="600"/>
 
 - **Design responsivo e moderno** com gradientes harmoniosos
 - **Navegação suave** entre seções com scroll animado
@@ -74,7 +75,7 @@ Transformar vidas através da beleza e bem-estar, proporcionando uma experiênci
 - **Formulário de agendamento** com validação em tempo real
 
 ### 🎁 **Sistema de Gift Cards**
-<img src="https://raw.githubusercontent.com/Jeffy-ADS/B-Beauty-Glow/main/img/presente.png" alt="Gift Cards" width="600"/>
+<img src="https://i.pinimg.com/736x/ba/ed/0b/baed0bc9eb18a2cf234d52d595f2e7da.jpg" alt="Gift Cards" width="600"/>
 
 - **Compra online** de cartões presente
 - **Múltiplas opções** de valores (R$ 50 a R$ 500)
@@ -83,7 +84,7 @@ Transformar vidas através da beleza e bem-estar, proporcionando uma experiênci
 - **Confirmação automática** do pedido
 
 ### 💳 **Processo de Checkout**
-<img src="https://raw.githubusercontent.com/Jeffy-ADS/B-Beauty-Glow/main/img/gift_card.png" alt="Checkout" width="600"/>
+<img src="https://i.pinimg.com/736x/b4/e5/4b/b4e54b9fdab73ebba45d4b7a7c59fece.jpg" alt="Checkout" width="600"/>
 
 - **Formulário inteligente** com validação
 - **Máscaras automáticas** para telefone e CPF
@@ -200,10 +201,7 @@ B-Beauty-Glow/
 │   ├── settings.py            # Configurações Django
 │   ├── urls.py                # URLs principais
 │   └── wsgi.py                # WSGI configuration
-├── img/                       # Screenshots do projeto
-│   ├── index.png              # Homepage
-│   ├── presente.png           # Gift cards
-│   └── gift_card.png          # Checkout
+├── img/                       # Screenshots do projeto (backup)
 ├── manage.py                  # Gerenciador Django
 ├── requirements.txt           # Dependências Python
 └── README.md                  # Este arquivo
@@ -212,7 +210,7 @@ B-Beauty-Glow/
 ## 🎯 Funcionalidades Detalhadas
 
 ### **🎠 Carrossel Interativo**
-<img src="https://raw.githubusercontent.com/Jeffy-ADS/B-Beauty-Glow/main/img/index.png" alt="Carrossel" width="500"/>
+<img src="https://i.pinimg.com/736x/2c/70/f5/2c70f566ee2fc1c1dff94a94bdc9a494.jpg" alt="Carrossel" width="500"/>
 
 - **Auto-play**: Rotação automática a cada 5 segundos
 - **Controles manuais**: Navegação por botões e indicadores
@@ -233,7 +231,7 @@ B-Beauty-Glow/
 - **Design responsivo**: Adaptação para dispositivos móveis
 
 ### **📝 Formulários Inteligentes**
-<img src="https://raw.githubusercontent.com/Jeffy-ADS/B-Beauty-Glow/main/img/gift_card.png" alt="Formulários" width="500"/>
+<img src="https://i.pinimg.com/736x/b4/e5/4b/b4e54b9fdab73ebba45d4b7a7c59fece.jpg" alt="Formulários" width="500"/>
 
 - **Validação em tempo real**: Feedback imediato para o usuário
 - **Máscaras de input**: Formatação automática de telefone
@@ -342,11 +340,11 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 <div align="center">
 
-**Foi uma honra trabalhar para B-Beauty Glow **
+**🌸 Feito com 💙 para B-Beauty Glow 🌸**
 
 *Transformando vidas através da beleza e bem-estar*
 
-<img src="https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/" alt="Homepage Preview" width="600"/>
+<img src="https://i.pinimg.com/736x/2c/70/f5/2c70f566ee2fc1c1dff94a94bdc9a494.jpg" alt="Ambiente B-Beauty Glow" width="600"/>
 
 [🏠 Ver Homepage](#-página-principal) • [🎁 Gift Cards](#-sistema-de-gift-cards) • [🚀 Instalação](#-instalação-e-configuração) • [📞 Contato](#-informações-de-contato)
 
