@@ -12,8 +12,7 @@
 <div align="center">
 
 ### 🎯 **Acesse o Demo Live**
-[🌐 **Ver Site ao Vivo**](http://127.0.0.1:8000/) | [📱 **Versão Mobile**](http://127.0.0.1:8000/) | [🎁 **Gift Cards**](http://127.0.0.1:8000/presente/)
-
+[🌐 **Ver Site ao Vivo**]([http://127.0.0.1:8000/](https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/)) 
 </div>
 
 ---
