@@ -1,4 +1,4 @@
-# 🌸 B-Beauty Glow
+# B-Beauty Glow
 
 > **Uma clínica de estética e bem-estar moderna e elegante localizada no Lago Sul, Brasília - DF**
 
@@ -210,7 +210,7 @@ B-Beauty-Glow/
 ## 🎯 Funcionalidades Detalhadas
 
 ### **🎠 Carrossel Interativo**
-<img src="https://i.pinimg.com/736x/2c/70/f5/2c70f566ee2fc1c1dff94a94bdc9a494.jpg" alt="Carrossel" width="500"/>
+<img src="https://i.pinimg.com/736x/0c/1e/87/0c1e87e039785335a6ca2d08d5fb5ff9.jpg" alt="Carrossel" width="500"/>
 
 - **Auto-play**: Rotação automática a cada 5 segundos
 - **Controles manuais**: Navegação por botões e indicadores
@@ -230,8 +230,11 @@ B-Beauty-Glow/
 - **Botão "Como chegar"**: Redirecionamento direto para navegação
 - **Design responsivo**: Adaptação para dispositivos móveis
 
-### **📝 Formulários Inteligentes**
+### **📝 Site Pronto**
+
 <img src="https://i.pinimg.com/736x/b4/e5/4b/b4e54b9fdab73ebba45d4b7a7c59fece.jpg" alt="Formulários" width="500"/>
+<a href="https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/" class="contact-link" target="_blank">(61) 99552-5150</a>
+                                    
 
 - **Validação em tempo real**: Feedback imediato para o usuário
 - **Máscaras de input**: Formatação automática de telefone
@@ -340,7 +343,7 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 <div align="center">
 
-**🌸 Feito com 💙 para B-Beauty Glow 🌸**
+**Foi uma honra trabalhar para B-Beauty Glow **
 
 *Transformando vidas através da beleza e bem-estar*
 
