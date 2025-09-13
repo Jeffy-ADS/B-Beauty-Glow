@@ -28,12 +28,12 @@
 *Interface principal com design elegante, carrossel interativo e formulário de agendamento integrado*
 
 ### 🎁 **Sistema de Gift Cards**
-<img src="https://i.pinimg.com/736x/ba/ed/0b/baed0bc9eb18a2cf234d52d595f2e7da.jpg" alt="Gift Cards" width="800"/>
+<img src="https://i.pinimg.com/736x/66/ca/6c/66ca6c51613978024ac86737cddc2d66.jpg" alt="Gift Cards" width="800"/>
 
 *Página dedicada para compra de cartões presente com interface moderna e intuitiva*
 
 ### 💳 **Processo de Compra**
-<img src="https://i.pinimg.com/736x/b4/e5/4b/b4e54b9fdab73ebba45d4b7a7c59fece.jpg" alt="Processo Gift Card" width="800"/>
+<img src="https://i.pinimg.com/736x/36/2f/fb/362ffbfa452ffaee1633a3590273800e.jpg" alt="Processo Gift Card" width="800"/>
 
 *Fluxo completo de compra com formulário validado e integração WhatsApp*
 
@@ -47,9 +47,9 @@
 
 | 🎯 Funcionalidade | 📸 Preview | ✨ Características |
 |---|---|---|
-| **🏠 Landing Page** | <img src="https://i.pinimg.com/736x/2c/70/f5/2c70f566ee2fc1c1dff94a94bdc9a494.jpg" width="300"/> | Design responsivo, carrossel interativo, mapa integrado |
-| **🎁 Gift Cards** | <img src="https://i.pinimg.com/736x/ba/ed/0b/baed0bc9eb18a2cf234d52d595f2e7da.jpg" width="300"/> | Sistema de compra, múltiplas opções, design elegante |
-| **💳 Checkout** | <img src="https://i.pinimg.com/736x/b4/e5/4b/b4e54b9fdab73ebba45d4b7a7c59fece.jpg" width="300"/> | Validação em tempo real, integração WhatsApp |
+| **🏠 Carrossel Interativo** | <img src="https://i.pinimg.com/736x/0c/1e/87/0c1e87e039785335a6ca2d08d5fb5ff9.jpg" width="300"/> | Design responsivo, carrossel interativo, mapa integrado |
+| **🎁 Gift Cards** | <img src="https://i.pinimg.com/736x/39/57/c3/3957c3f1f35b302c1c001763651c5328.jpg" width="300"/> | Sistema de compra, múltiplas opções, design elegante |
+| **💳 Chat** | <img src="https://i.pinimg.com/736x/96/c3/49/96c349213f8e2e5736b3894c46b74f2e.jpg" width="300"/> | Integração WhatsApp |
 
 </div>
 
@@ -75,7 +75,7 @@ Transformar vidas através da beleza e bem-estar, proporcionando uma experiênci
 - **Formulário de agendamento** com validação em tempo real
 
 ### 🎁 **Sistema de Gift Cards**
-<img src="https://i.pinimg.com/736x/ba/ed/0b/baed0bc9eb18a2cf234d52d595f2e7da.jpg" alt="Gift Cards" width="600"/>
+<img src="https://i.pinimg.com/736x/39/57/c3/3957c3f1f35b302c1c001763651c5328.jpg" alt="Gift Cards" width="600"/>
 
 - **Compra online** de cartões presente
 - **Múltiplas opções** de valores (R$ 50 a R$ 500)
@@ -84,7 +84,7 @@ Transformar vidas através da beleza e bem-estar, proporcionando uma experiênci
 - **Confirmação automática** do pedido
 
 ### 💳 **Processo de Checkout**
-<img src="https://i.pinimg.com/736x/b4/e5/4b/b4e54b9fdab73ebba45d4b7a7c59fece.jpg" alt="Checkout" width="600"/>
+<img src="https://i.pinimg.com/736x/35/c7/08/35c708b6371d49360c623bf5156b63ef.jpg" alt="Checkout" width="600"/>
 
 - **Formulário inteligente** com validação
 - **Máscaras automáticas** para telefone e CPF
