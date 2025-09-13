@@ -1,68 +1,349 @@
-# 💎 B-Beauty Glow  
+# 🌸 B-Beauty Glow
 
-No coração do **Lago Sul**, a **B-Beauty Glow** é o espaço onde **estética, bem-estar e exclusividade** se encontram.  
-Mais do que uma clínica, somos um **refúgio de beleza e autocuidado**, criado para mulheres e homens que valorizam a elegância, a confiança e o brilho que vem de dentro para fora.  
+> **Uma clínica de estética e bem-estar moderna e elegante localizada no Lago Sul, Brasília - DF**
 
----
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
+[![Django](https://img.shields.io/badge/Django-4.2+-green.svg)](https://djangoproject.com)
+[![HTML5](https://img.shields.io/badge/HTML5-orange.svg)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-blue.svg)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Responsive](https://img.shields.io/badge/Responsive-Mobile%20First-green.svg)](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
 
-## ✨ Nossa missão  
+<div align="center">
 
-Proporcionar uma **experiência única e transformadora**.  
-Cada detalhe foi pensado para que você se sinta acolhido em um ambiente moderno, delicado e inspirador.  
-Aqui, **tecnologia de ponta** se une ao **cuidado humano**, resultando em tratamentos que realçam sua **beleza natural** e renovam sua **autoestima**.  
+### 🎯 **Acesse o Demo Live**
+[🌐 **Ver Site ao Vivo**](http://127.0.0.1:8000/) | [📱 **Versão Mobile**](http://127.0.0.1:8000/) | [🎁 **Gift Cards**](http://127.0.0.1:8000/presente/)
 
----
-
-## 🌸 O que oferecemos  
-
-- **Massoterapia**  
-  Massagem relaxante, terapêutica, desportiva (para atletas), drenagem linfática manual e massagem modeladora.  
-
-- **Dermatologia**  
-  Limpeza de pele, peelings, esfoliações, consultoria sobre cuidados com a pele e produtos cosméticos.  
-
-- **Estética Corporal**  
-  Tratamentos para celulite e estrias, gordura localizada, flacidez, hidratação corporal, harmonização corporal e banho de lua.  
-
-- **Podologia**  
-  Tratamentos para micose, mau cheiro, olho de peixe, feridas e spa dos pés.  
+</div>
 
 ---
 
-## 🎁 Pacotes Especiais  
+## 📸 Preview do Projeto
 
-### 👑 Debutante  
-- **Pacote 1:** Massagem terapêutica, esfoliação, hidratação corporal e pedicure podológico.  
-- **Pacote 2:** Massagem modeladora, limpeza de pele, harmonização corporal e podologia preventiva.  
+<div align="center">
 
-### 🤵 Noivo  
-- **Pacote 1:** Massagem terapêutica, peelings, harmonização corporal e spa dos pés.  
-- **Pacote 2:** Drenagem linfática manual, limpeza de pele, tratamento para gordura localizada e tratamento de micose.  
+### 🏠 **Página Principal**
+![Homepage B-Beauty Glow](img/index.png)
+*Interface principal com design elegante, carrossel interativo e formulário de agendamento integrado*
 
-### 👰 Noiva  
-- **Pacote 1:** Massagem modeladora, peelings, banho de lua e spa dos pés.  
-- **Pacote 2:** Drenagem linfática manual, limpeza de pele, hidratação corporal e pedicure podológico.  
+### 🎁 **Sistema de Gift Cards**
+![Gift Cards](img/presente.png)
+*Página dedicada para compra de cartões presente com interface moderna e intuitiva*
 
----
+### 💳 **Processo de Compra**
+![Processo Gift Card](img/gift_card.png)
+*Fluxo completo de compra com formulário validado e integração WhatsApp*
 
-## 📍 Localização  
-
-📌 **ST. De Habitações Individuais Sul – Lago Sul**  
+</div>
 
 ---
 
-## 📞 Contatos  
+## 🌟 **Principais Destaques Visuais**
 
-- **Telefone:** (61) 3456-7801  
-- **E-mail:** [clinica@bbeautyglow.com.br](mailto:clinica@bbeautyglow.com.br)  
-- **Instagram:** [@b_beautyglowclinica](https://instagram.com/b_beautyglowclinica)  
+<div align="center">
+
+| 🎯 Funcionalidade | 📸 Preview | ✨ Características |
+|---|---|---|
+| **🏠 Landing Page** | ![](img/index.png) | Design responsivo, carrossel interativo, mapa integrado |
+| **🎁 Gift Cards** | ![](img/presente.png) | Sistema de compra, múltiplas opções, design elegante |
+| **💳 Checkout** | ![](img/gift_card.png) | Validação em tempo real, integração WhatsApp |
+
+</div>
 
 ---
 
-## 🌐 Exemplo de referência  
-Confira o estilo que nos inspira: [Adamah Spa](https://adamahspa.com.br)  
+## 📋 Sobre o Projeto
+
+A **B-Beauty Glow** é um sistema web completo desenvolvido para uma clínica de estética e bem-estar, oferecendo uma experiência digital moderna e intuitiva para clientes em busca de tratamentos de beleza e relaxamento no coração do Lago Sul, Brasília.
+
+### ✨ Missão
+Transformar vidas através da beleza e bem-estar, proporcionando uma experiência única que vai além dos tratamentos estéticos tradicionais.
+
+## 🚀 Funcionalidades Principais
+
+### 🏠 **Landing Page**
+![Homepage](img/index.png)
+
+- **Design responsivo e moderno** com gradientes harmoniosos
+- **Navegação suave** entre seções com scroll animado
+- **Carrossel interativo** de ambientes da clínica
+- **Integração WhatsApp** para atendimento direto
+- **Mapa interativo** com localização no Lago Sul
+- **Formulário de agendamento** com validação em tempo real
+
+### 🎁 **Sistema de Gift Cards**
+![Gift Cards](img/presente.png)
+
+- **Compra online** de cartões presente
+- **Múltiplas opções** de valores (R$ 50 a R$ 500)
+- **Design elegante** com cards interativos
+- **Processamento seguro** via WhatsApp
+- **Confirmação automática** do pedido
+
+### 💳 **Processo de Checkout**
+![Checkout](img/gift_card.png)
+
+- **Formulário inteligente** com validação
+- **Máscaras automáticas** para telefone e CPF
+- **Integração WhatsApp** para finalização
+- **Experiência fluida** do carrinho ao pagamento
+
+### 💅 **Serviços Oferecidos**
+- **Massoterapia**: Relaxante, terapêutica, esportiva, drenagem linfática
+- **Dermatologia Estética**: Limpeza de pele, peelings, consultoria dermocosmética
+- **Estética Corporal**: Tratamentos para celulite, estrias, flacidez
+- **Podologia**: Cuidados especializados e spa dos pés
+
+### 💎 **Pacotes Especiais**
+- **Pacote Debutante**: Tratamentos especiais para quinze anos
+- **Pacote Noiva**: Preparação completa para o grande dia
+- **Pacote Noivo**: Cuidados masculinos para casamentos
+
+### 📅 **Agendamento Online**
+- **Formulário interativo** para solicitação de horários
+- **Integração direta** com WhatsApp
+- **Validação de dados** em tempo real
+- **Seleção de serviços** e datas preferenciais
+
+## 🛠️ Tecnologias Utilizadas
+
+### **Backend**
+- **Django 4.2+**: Framework web principal
+- **Python 3.8+**: Linguagem de programação
+- **SQLite**: Banco de dados (desenvolvimento)
+
+### **Frontend**
+- **HTML5**: Estrutura semântica
+- **CSS3**: Estilização avançada com gradientes e animações
+- **JavaScript ES6+**: Interatividade e funcionalidades dinâmicas
+- **Font Awesome**: Biblioteca de ícones
+
+### **Integrações**
+- **Google Maps**: Localização da clínica
+- **WhatsApp API**: Chat e agendamentos
+- **Instagram**: Integração com redes sociais
+
+## 📦 Requisitos do Sistema
+
+### **Requisitos Mínimos**
+```bash
+- Python 3.8 ou superior
+- Django 4.2 ou superior
+- Navegador web moderno (Chrome, Firefox, Safari, Edge)
+- Conexão com internet para APIs externas
+```
+
+### **Dependências Python**
+```python
+Django>=4.2.0
+pillow>=10.0.0
+```
+
+## 🚀 Instalação e Configuração
+
+### **1. Clone o Repositório**
+```bash
+git clone https://github.com/Jeffy-ADS/B-Beauty-Glow.git
+cd B-Beauty-Glow
+```
+
+### **2. Crie um Ambiente Virtual**
+```bash
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Linux/Mac
+source venv/bin/activate
+```
+
+### **3. Instale as Dependências**
+```bash
+pip install -r requirements.txt
+```
+
+### **4. Configure o Banco de Dados**
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### **5. Execute o Servidor de Desenvolvimento**
+```bash
+python manage.py runserver
+```
+
+### **6. Acesse a Aplicação**
+```
+http://127.0.0.1:8000/
+```
+
+## 🎨 Estrutura do Projeto
+
+```
+B-Beauty-Glow/
+├── clinica/                    # App principal
+│   ├── migrations/             # Migrações do banco
+│   ├── templates/              # Templates HTML
+│   │   └── clinica/
+│   │       ├── home.html       # Página principal
+│   │       ├── presente.html   # Gift cards
+│   │       └── seupedido.html  # Confirmação de pedido
+│   ├── static/                 # Arquivos estáticos
+│   ├── models.py              # Modelos de dados
+│   ├── views.py               # Views da aplicação
+│   └── urls.py                # URLs do app
+├── bbeautyglow/               # Configurações do projeto
+│   ├── settings.py            # Configurações Django
+│   ├── urls.py                # URLs principais
+│   └── wsgi.py                # WSGI configuration
+├── img/                       # Screenshots do projeto
+│   ├── index.png              # Homepage
+│   ├── presente.png           # Gift cards
+│   └── gift_card.png          # Checkout
+├── manage.py                  # Gerenciador Django
+├── requirements.txt           # Dependências Python
+└── README.md                  # Este arquivo
+```
+
+## 🎯 Funcionalidades Detalhadas
+
+### **🎠 Carrossel Interativo**
+![Carrossel](img/index.png)
+- **Auto-play**: Rotação automática a cada 5 segundos
+- **Controles manuais**: Navegação por botões e indicadores
+- **Pausa inteligente**: Para automaticamente ao hover do mouse
+- **Swipe gestures**: Navegação por toque em dispositivos móveis
+- **Responsividade**: Adaptação perfeita para todos os tamanhos de tela
+
+### **📱 Chat Widget WhatsApp**
+- **Posição fixa**: Sempre visível no canto inferior direito
+- **Tooltip informativo**: Orientação para o usuário
+- **Animações**: Efeitos visuais atraentes
+- **Mensagens personalizadas**: Templates específicos para cada contexto
+
+### **🗺️ Mapa Interativo**
+- **Google Maps embed**: Localização precisa do Lago Sul
+- **Overlay informativo**: Nome e endereço da clínica
+- **Botão "Como chegar"**: Redirecionamento direto para navegação
+- **Design responsivo**: Adaptação para dispositivos móveis
+
+### **📝 Formulários Inteligentes**
+![Formulários](img/gift_card.png)
+- **Validação em tempo real**: Feedback imediato para o usuário
+- **Máscaras de input**: Formatação automática de telefone
+- **Mensagens de erro**: Orientação clara sobre problemas
+- **Integração WhatsApp**: Envio direto de dados formatados
+
+## 🎨 Design e UX
+
+### **🌈 Paleta de Cores**
+- **Primária**: `#E8A87C` (Coral suave)
+- **Secundária**: `#D4A574` (Dourado elegante)
+- **Neutros**: `#8B7355`, `#A68B5B` (Tons terrosos)
+- **Backgrounds**: `#FAF8F5`, `#F4E6D8` (Tons creme)
+
+### **📱 Responsividade**
+- **Mobile-first**: Design pensado primeiro para dispositivos móveis
+- **Breakpoints**: Adaptação para tablet e desktop
+- **Touch-friendly**: Botões e controles otimizados para toque
+- **Performance**: Carregamento rápido em todas as resoluções
+
+## 🔧 Configurações Importantes
+
+### **Variáveis de Ambiente (Recomendado)**
+```python
+# settings.py
+SECRET_KEY = 'sua-chave-secreta-aqui'
+DEBUG = False  # Em produção
+ALLOWED_HOSTS = ['seudominio.com']
+
+# Configurações de Email (opcional)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+```
+
+### **Configuração do WhatsApp**
+```javascript
+// Número da clínica (atualizar conforme necessário)
+const WHATSAPP_NUMBER = '556134567801';
+```
+
+## 📞 Informações de Contato
+
+- **Telefone**: (61) 3456-7801
+- **E-mail**: clinica@bbeautyglow.com.br
+- **Instagram**: [@b_beautyglowclinica](https://instagram.com/b_beautyglowclinica)
+- **Endereço**: ST. De Habitações Individuais Sul, Lago Sul - DF
+
+## 🕐 Horário de Funcionamento
+
+- **Segunda a Sexta**: 8h às 18h
+- **Sábado**: 8h às 16h
+- **Domingo**: Fechado
+
+*Agendamento necessário para todos os serviços*
+
+## 🤝 Contribuindo
+
+1. **Fork** o projeto
+2. **Crie** uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. **Commit** suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** para a branch (`git push origin feature/AmazingFeature`)
+5. **Abra** um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## 👨‍💻 Desenvolvedor
+
+**Jeffeson Brito**
+- Website: [jeffesonbrito.com.br](https://jeffesonbrito.com.br)
+- GitHub: [@Jeffy-ADS](https://github.com/Jeffy-ADS)
+- LinkedIn: [Jeffeson Brito](https://linkedin.com/in/jeffeson-brito)
 
 ---
 
-✨ **Agende sua visita e venha viver a beleza de brilhar por dentro e por fora.**  
-**B-Beauty Glow – Lago Sul | O seu lugar de estética, bem-estar e confiança.**
+## 🎯 Próximas Funcionalidades
+
+- [ ] Sistema de blog para dicas de beleza
+- [ ] Galeria de antes e depois
+- [ ] Sistema de avaliações de clientes
+- [ ] Agendamento online com calendário integrado
+- [ ] Portal do cliente com histórico de tratamentos
+- [ ] Sistema de pontuação e recompensas
+- [ ] Newsletter automática
+- [ ] Integração com redes sociais para compartilhamento
+
+## 🔍 SEO e Performance
+
+- **Meta tags** otimizadas para busca local
+- **Structured data** para Google Business
+- **Performance** otimizada com lazy loading
+- **Compressão** de imagens automática
+- **Cache** estratégico para melhor velocidade
+
+## 📊 Analytics e Métricas
+
+- Integração preparada para Google Analytics
+- Tracking de conversões de agendamento
+- Métricas de engajamento do chat widget
+- Monitoramento de performance do carrossel
+
+---
+
+<div align="center">
+
+**Foi Uma Hora Desenvolver esse Site**
+
+*Transformando vidas através da beleza e bem-estar*
+
+![Homepage Preview](img/index.png)
+
+[🏠 Ver Homepage](#-página-principal) • [🎁 Gift Cards](#-sistema-de-gift-cards) • [🚀 Instalação](#-instalação-e-configuração) • [📞 Contato](#-informações-de-contato)
+
+</div>
