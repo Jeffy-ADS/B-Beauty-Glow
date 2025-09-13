@@ -346,7 +346,7 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 *Transformando vidas através da beleza e bem-estar*
 
-<img src="https://raw.githubusercontent.com/Jeffy-ADS/B-Beauty-Glow/main/img/index.png" alt="Homepage Preview" width="600"/>
+<img src="https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/" alt="Homepage Preview" width="600"/>
 
 [🏠 Ver Homepage](#-página-principal) • [🎁 Gift Cards](#-sistema-de-gift-cards) • [🚀 Instalação](#-instalação-e-configuração) • [📞 Contato](#-informações-de-contato)
 
