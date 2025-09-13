@@ -232,8 +232,8 @@ B-Beauty-Glow/
 
 ### **📝 Site Pronto**
 
-<img src="https://i.pinimg.com/736x/b4/e5/4b/b4e54b9fdab73ebba45d4b7a7c59fece.jpg" alt="Formulários" width="500"/>
-<a href="https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/" class="contact-link" target="_blank">(61) 99552-5150</a>
+<img src="https://i.pinimg.com/736x/2c/70/f5/2c70f566ee2fc1c1dff94a94bdc9a494.jpg" alt="Formulários" width="500"/>
+<a href="https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/" class="contact-link" target="_blank">Site B-Beauty Glow </a>
                                     
 
 - **Validação em tempo real**: Feedback imediato para o usuário
