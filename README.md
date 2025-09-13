@@ -12,9 +12,7 @@
 <div align="center">
 
 ### 🎯 **Acesse o Demo Live**
-[🌐 **Ver Site ao Vivo**](https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/) | [🎁 **Gift Cards**](https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/presente.html)
-<a href="https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/" class="contact-link" target="_blank">Site B-Beauty Glow </a>
-<a href="https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/presente.html" class="contact-link" target="_blank">Site B-Beauty Glow </a>
+[🌐 **Ver Site ao Vivo**](https://senac-df-ceps.github.io/b-beautyglow-Jeffy-ADS/) 
 
 
 </div>
